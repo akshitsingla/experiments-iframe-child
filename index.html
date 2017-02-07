@@ -1,8 +1,50 @@
 <html>
 	<head>
-		<title>This is title</title>
+		<title>JS APIs for URL access</title>
 	</head>
 	<body>
-		Hello world
+		<h1>JS APIs for URL access</h1>
+		<table id="js-apis-fullurl" style=""></table>
+
+		<h1>JS APIs for (partial) URL access</h1>
+		<table id="js-apis" style=""></table>
+
+		<script>
+
+			function appendToDOM(parentDomId, childStr) {
+				document.getElementById(parentDomId).innerHTML += childStr;
+			}
+
+			function printJsAPIs(tableDomId, apiArray) {
+				for (var i = 0; i < apiArray.length;  i++) {
+					var str = "<tr><td>" + apiArray[0];
+					str += "</td><td>" + eval(apiArray[0]);
+					str += "</td></tr>";
+					appendToDOM(tableDomId, str);
+				}
+			}
+
+			var jsAPIsForFullURL = [
+				"window.location.href",
+				"document.URL"
+			];
+
+			var jsAPIsForPartialURL = [
+				"window.location.host",
+				"window.location.hostname",
+				"window.location.port",
+				"window.location.protocol",
+				"window.location.hash",
+				"window.location.search",
+				"window.location.origin"
+			];
+
+			printJsAPIs(jsAPIsForFullURL);
+			printJsAPIs(jsAPIsForPartialURL);
+
+			// iFrame
+			// domain forwarding without masking (redirection)
+			// domain forwarding with masking
+		</script>
 	</body>
 </html>
