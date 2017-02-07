@@ -1,6 +1,17 @@
 <html>
 	<head>
 		<title>JS APIs for URL access</title>
+
+		<style>
+			tr {
+				border: 1px solid black;
+				border-radius: 4px;
+				margin-bottom: 5px;
+			}
+			td {
+				padding: 20px;
+			}
+		</style>
 	</head>
 	<body>
 		<h1>JS APIs for URL access</h1>
@@ -17,7 +28,7 @@
 
 			function printJsAPIs(tableDomId, apiArray) {
 				for (var i = 0; i < apiArray.length;  i++) {
-					var str = "<tr><td>" + apiArray[0];
+					var str = "<tr><td>" + apiArray[0] + " : ";
 					str += "</td><td>" + eval(apiArray[0]);
 					str += "</td></tr>";
 					appendToDOM(tableDomId, str);
