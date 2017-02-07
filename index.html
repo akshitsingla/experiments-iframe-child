@@ -28,8 +28,8 @@
 
 			function printJsAPIs(tableDomId, apiArray) {
 				for (var i = 0; i < apiArray.length;  i++) {
-					var str = "<tr><td>" + apiArray[0] + " : ";
-					str += "</td><td>" + eval(apiArray[0]);
+					var str = "<tr><td>" + apiArray[i] + " : ";
+					str += "</td><td>" + eval(apiArray[i]);
 					str += "</td></tr>";
 					appendToDOM(tableDomId, str);
 				}
@@ -37,7 +37,9 @@
 
 			var jsAPIsForFullURL = [
 				"window.location.href",
-				"document.URL"
+				"document.URL",
+				"top.window.location.href",
+				"top.document.URL"
 			];
 
 			var jsAPIsForPartialURL = [
