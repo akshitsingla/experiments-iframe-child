@@ -15,9 +15,7 @@ function printJsAPIs(tableDomId, apiArray) {
 
 var jsAPIsForFullURL = [
 	"window.location.href",
-	"document.URL",
-	"top.window.location.href",
-	"top.document.URL"
+	"document.URL"
 ];
 
 var jsAPIsForPartialURL = [
@@ -30,8 +28,18 @@ var jsAPIsForPartialURL = [
 	"window.location.origin"
 ];
 
+var jsAPIsForParentURL = [
+	"document.referrer"
+];
+/*
+	LEARNINGS
+		- top, window.top, window.parent are inaccessible objects in (Chrome) browser.
+		- One way to get parent URL is to pass it as query-param while opening iFrame.
+*/
+
 printJsAPIs("js-apis-fullUrl", jsAPIsForFullURL);
 printJsAPIs("js-apis-partialUrl", jsAPIsForPartialURL);
+printJsAPIs("js-apis-parentUrl", jsAPIsForParentURL);
 
 // Special cases :
 // iFrame
